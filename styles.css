@@ -1,0 +1,397 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  /*
+   * 0% e 100%: O brilho base é muito suave, usando um toque sutil da cor dourada
+   * (250, 211, 46) com baixa opacidade, substituindo a cor cinza/oliva original
+   * para manter a coesão estética.
+   */
+  0%,
+  100% {
+    /* Redução do spread (4px) e opacidade baixa (0.3) */
+    box-shadow: 0 0 4px rgba(250, 211, 46, 0.3);
+  }
+  /*
+   * 50%: O pico do brilho é reduzido para ser menos dramático e mais difuso.
+   */
+  50% {
+    /* Redução do spread (12px e 20px) e opacidade moderada (0.6 e 0.4) */
+    box-shadow: 0 0 12px rgba(250, 211, 46, 0.6),
+      0 0 20px rgba(250, 211, 46, 0.4);
+  }
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-texture {
+  background: linear-gradient(
+      135deg,
+      rgba(30, 30, 30, 0.8) 0%,
+      rgba(42, 168, 157, 0.6) 100%
+    ),
+    url("images/wood-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(250, 211, 46, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(30, 30, 30, 0.9);
+  border-bottom: 1px solid rgba(250, 211, 46, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-blur.scrolled {
+  background: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   FONTS
+   ======================================== */
+
+.font-display {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.font-sans {
+  font-family: "Oswald", sans-serif;
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #fad32e, #2aa89d);
+  border-radius: 2px;
+}
+
+/* ========================================
+   BACKGROUNDS
+   ======================================== */
+
+.bg-tile-pattern {
+  background-image: url("images/tile-pattern.png");
+}
+
+.bg-map-grid {
+  background-image: url("images/map-grid.png");
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card-hover {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   PARALLAX
+   ======================================== */
+
+.parallax-hero {
+  background-attachment: fixed;
+}
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline-item {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.timeline-item:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* ========================================
+   BLOG CARDS
+   ======================================== */
+
+.blog-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover img {
+  transform: scale(1.05);
+}
+
+.blog-card img {
+  transition: transform 0.3s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ========================================
+   FEEDBACK CARDS
+   ======================================== */
+
+.feedback-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feedback-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 211, 46, 0.05) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feedback-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+
+.form-input {
+  transition: all 0.3s ease;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(250, 211, 46, 0.3);
+}
+
+.form-input:focus {
+  border-color: #fad32e;
+  box-shadow: 0 0 0 3px rgba(250, 211, 46, 0.1);
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.form-input.valid {
+  border-color: #2aa89d;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fad32e 0%, #e6b800 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(250, 211, 46, 0.3);
+}
+
+/* ========================================
+   WHATSAPP BUTTON
+   ======================================== */
+
+.whatsapp-float {
+  animation: pulse 2s infinite;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hero-texture {
+    background-attachment: scroll;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.hashtag {
+  color: #417e94; /* Subtle but visible teal for hashtags */
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fad32e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6b800;
+}

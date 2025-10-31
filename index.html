@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <!-- Header -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Shinzo_Suzuki-FullStack Developer">
+    <title>Boteco Tudo Aqui Perto de Casa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              boteco: {
+                dark: "#1e1e1e",
+                primary: "#2aa89d",
+                "accent-primary": "#fad32e",
+                "accent-secondary": "#e6b800",
+                light: "#ffffff",
+                danger: "#dc2626",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- Body -->
+  <body class="font-display text-boteco-light">
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/5582999999999"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 bg-green-500 rounded-full p-4 shadow-xl hover:scale-110 transition-transform whatsapp-float"
+    >
+      <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-40 bg-boteco-dark/90 shadow-lg backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0">
+            <a href="#home" class="flex items-center space-x-2">
+              <img
+                src="img/Alterações1.PNG"
+                alt="Logo Boteco"
+                class="h-16 w-auto"
+              />
+              <span
+                class="text-xl font-bold text-boteco-accent-primary hidden sm:block"
+                >Boteco Tudo Aqui Perto de Casa</span
+              >
+            </a>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-6">
+              <a
+                href="#home"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Home</a
+              >
+              <a
+                href="#historia"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >História</a
+              >
+              <a
+                href="#conceito"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Conceito</a
+              >
+              <a
+                href="#blog"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Blog</a
+              >
+              <a
+                href="#feedbacks"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Feedbacks</a
+              >
+              <a
+                href="#localizacao"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Localização</a
+              >
+              <a
+                href="#fale-conosco"
+                class="text-boteco-light hover:text-boteco-accent-primary transition duration-300 uppercase"
+                >Fale Conosco</a
+              >
+            </div>
+          </div>
+
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-boteco-light hover:text-white hover:bg-boteco-danger focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Abrir menu principal</span>
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-boteco-dark/95">
+          <a
+            href="#home"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Home</a
+          >
+          <a
+            href="#historia"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >História</a
+          >
+          <a
+            href="#conceito"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Conceito</a
+          >
+          <a
+            href="#blog"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Blog</a
+          >
+          <a
+            href="#feedbacks"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Feedbacks</a
+          >
+          <a
+            href="#localizacao"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Localização</a
+          >
+          <a
+            href="#fale-conosco"
+            class="block px-3 py-2 rounded-md text-base font-medium text-boteco-light hover:bg-boteco-accent-primary hover:text-boteco-dark uppercase"
+            >Fale Conosco</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-texture min-h-screen pt-20 flex items-center justify-center relative bg-gradient-to-br from-boteco-dark via-boteco-primary/80 to-boteco-accent-primary/60 bg-blend-overlay scroll-mt-20 parallax-hero"
+    >
+      <div class="container mx-auto text-center py-24 relative z-10">
+        <img
+          src="img/novo modelo.png"
+          alt=""
+          class="mx-auto w-64 md:w-96 mb-12"
+        />
+
+        <h1
+          class="text-7xl md:text-9xl font-extrabold text-boteco-light tracking-widest mb-4 leading-none"
+        >
+          VEM PRO BOTECO!
+        </h1>
+        <p
+          class="text-2xl md:text-3xl text-boteco-light mb-12 font-sans font-thin tracking-wider"
+        >
+          Aqui tem <span class="hashtag">#BoaComida</span>,
+          <span class="hashtag">#BoaMúsica</span>,
+          <span class="hashtag">#BoaGente</span>
+        </p>
+
+        <a
+          href="#fale-conosco"
+          class="btn-primary inline-block px-12 py-4 text-boteco-dark text-xl font-bold uppercase rounded-lg shadow-2xl"
+        >
+          FALE CONOSCO
+        </a>
+      </div>
+    </section>
+
+    <!-- History Section -->
+    <section
+      id="historia"
+      class="py-24 bg-boteco-primary text-boteco-light scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-6xl text-center font-bold mb-16 text-boteco-light uppercase tracking-wider"
+        >
+          Nossa História
+        </h2>
+
+        <div class="text-center mb-12">
+          <div
+            class="inline-block p-6 bg-boteco-accent-primary rounded-full shadow-2xl"
+          >
+            <i class="fas fa-utensils text-6xl text-boteco-dark"></i>
+          </div>
+        </div>
+
+        <div class="relative wrap overflow-hidden p-10 h-full">
+          <div
+            class="border-2-2 absolute border-opacity-20 border-boteco-dark h-full border right-1/2 hidden md:block"
+          ></div>
+
+          <div
+            class="mb-8 flex justify-between items-center w-full md:flex-row-reverse left-timeline"
+          >
+            <div class="order-1 md:w-5/12"></div>
+            <div
+              class="z-10 flex items-center order-1 bg-boteco-accent-primary shadow-xl w-8 h-8 rounded-full md:absolute right-1/2 transform translate-x-1/2"
+            >
+              <h1 class="mx-auto font-bold text-lg text-boteco-dark">2022</h1>
+            </div>
+            <div
+              class="order-1 timeline-item bg-boteco-light text-boteco-dark rounded-lg shadow-xl md:w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-boteco-primary text-3xl">2022</h3>
+              <p class="text-sm leading-snug tracking-wide">
+                Oi, eu sou Boteco Tudo Aqui Perto de Casa Fui inaugurado
+                em 03 de dezembro de 2022. Surgi com a ideia de ser um lugar
+                especial onde gente feliz encontra gente feliz. Por isso, meu
+                lema é #boacomida, #boabebida e #boagente. Pode me procurar por
+                qualquer uma destas # nas redes sociais que você me encontrará
+                fácil.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline"
+          >
+            <div class="order-1 md:w-5/12"></div>
+            <div
+              class="z-10 flex items-center order-1 bg-boteco-accent-primary shadow-xl w-8 h-8 rounded-full md:absolute right-1/2 transform translate-x-1/2"
+            >
+              <h1 class="mx-auto font-bold text-lg text-boteco-dark">2023</h1>
+            </div>
+            <div
+              class="order-1 timeline-item bg-boteco-light text-boteco-dark rounded-lg shadow-xl md:w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-boteco-primary text-3xl">2023</h3>
+              <p class="text-sm leading-snug tracking-wide">
+                Desde que nasci, eu conquistei muita coisa. Em menos de um ano,
+                já era apontado como parada obrigatória para os turistas que
+                visitavam Maceió e também para os locais. Ganhei grande
+                relevância em sites especializados em viagens, influencers e o
+                público em geral.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mb-8 flex justify-between items-center w-full md:flex-row-reverse left-timeline"
+          >
+            <div class="order-1 md:w-5/12"></div>
+            <div
+              class="z-10 flex items-center order-1 bg-boteco-accent-primary shadow-xl w-8 h-8 rounded-full md:absolute right-1/2 transform translate-x-1/2"
+            >
+              <h1 class="mx-auto font-bold text-lg text-boteco-dark">2024</h1>
+            </div>
+            <div
+              class="order-1 timeline-item bg-boteco-light text-boteco-dark rounded-lg shadow-xl md:w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-boteco-primary text-3xl">2024</h3>
+              <p class="text-sm leading-snug tracking-wide">
+                Em 2024, continuamos a expandir nossa presença e a encantar
+                nossos clientes com novas experiências gastronômicas e musicais.
+                Recebemos prêmios e reconhecimentos por nossa excelência em
+                atendimento e inovação.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mb-8 flex justify-between items-center w-full right-timeline opacity-50"
+          >
+            <div class="order-1 md:w-5/12"></div>
+            <div
+              class="z-10 flex items-center order-1 bg-boteco-dark shadow-xl w-6 h-6 rounded-full md:absolute right-1/2 transform translate-x-1/2"
+            ></div>
+            <div
+              class="order-1 timeline-item bg-boteco-dark/50 text-boteco-light rounded-lg shadow-xl md:w-5/12 px-6 py-4"
+            >
+              <h3 class="mb-3 font-bold text-2xl">
+                2025 (Aguardando Novos Marcos)
+              </h3>
+              <p class="text-sm leading-snug tracking-wide">
+                O futuro reserva ainda mais surpresas e momentos inesquecíveis.
+                Continue acompanhando nossas redes sociais para ficar por dentro
+                das novidades!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div
+      class="relative py-12 bg-gradient-to-r from-boteco-primary to-boteco-accent-primary"
+    >
+      <div class="absolute inset-0 bg-boteco-dark opacity-20"></div>
+      <div class="relative text-center">
+        <i
+          class="fas fa-utensils text-6xl text-boteco-light animate-bounce"
+        ></i>
+      </div>
+    </div>
+
+    <!-- Concept Section -->
+    <section
+      id="conceito"
+      class="py-24 bg-boteco-dark bg-tile-pattern bg-repeat scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-6xl text-center font-bold mb-16 text-boteco-accent-primary uppercase tracking-wider"
+        >
+          Conceito e Paixão
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-boteco-accent-primary text-boteco-dark p-8 rounded-lg shadow-2xl"
+          >
+            <h3 class="text-4xl font-bold mb-4 uppercase">VISÃO</h3>
+            <ul class="list-disc list-inside space-y-3 font-sans font-medium">
+              <li>Deixar o mundo mais divertido e mais feliz.</li>
+              <li>
+                Ser a empresa referência em alimentação fora do lar, expandindo
+                nosso nome e levando para outros lugares.
+              </li>
+              <li>
+                Ser reconhecida como a melhor opção, estando sempre entre as 3
+                melhores na escolha do cliente.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-hover bg-boteco-dark text-boteco-light p-8 rounded-lg shadow-2xl border-2 border-boteco-accent-primary"
+          >
+            <h3
+              class="text-4xl font-bold mb-4 uppercase text-boteco-accent-primary"
+            >
+              MISSÃO
+            </h3>
+            <p class="mb-4 font-sans">
+              No Boteco Tudo Aqui Mais Perto de Casa temos a principal função de
+              oferecer momentos incríveis. Queremos ajudar o cliente a estar e
+              se sentir bem, através da gastronomia, música e atendimento. Nossa
+              missão é essa, ser a melhor opção de entretenimento, sendo
+              referência em qualidade e satisfação.
+            </p>
+            <p class="text-sm font-sans">
+              Se, quando você lembrar do Tudo Aqui Mais Perto de Casa, der
+              saudade e a lembrança lhe fizer sorrir, nossa missão está sendo
+              cumprida.
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-boteco-dark text-boteco-light p-8 rounded-lg shadow-2xl border-2 border-boteco-accent-primary"
+          >
+            <h3
+              class="text-4xl font-bold mb-4 uppercase text-boteco-accent-primary"
+            >
+              VALORES
+            </h3>
+            <ul class="list-disc list-inside space-y-3 font-sans font-medium">
+              <li>Ética, Transparência, Responsabilidade social.</li>
+              <li>Respeito com colaboradores e fornecedores, Humanização.</li>
+              <li>
+                AMOR, ter, ser e transmitir para todos que estão ligados, direta
+                ou indiretamente com a empresa, que todos façam com AMOR.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div
+      class="relative py-12 bg-gradient-to-r from-boteco-accent-primary to-boteco-primary"
+    >
+      <div class="absolute inset-0 bg-boteco-dark opacity-20"></div>
+      <div class="relative text-center">
+        <i class="fas fa-star text-6xl text-boteco-light animate-pulse"></i>
+      </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section
+      id="blog"
+      class="py-24 bg-boteco-light text-boteco-dark scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-6xl text-center font-bold mb-16 text-boteco-dark uppercase tracking-wider"
+        >
+          Últimas do Blog
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article
+            class="blog-card bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200"
+          >
+            <div
+              class="w-full h-48 bg-boteco-accent-primary flex items-center justify-center"
+            >
+              <i class="fas fa-drumstick-bite text-6xl text-boteco-dark"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">
+                Os 5 Petiscos Mais Vendidos de Maceió
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Descubra os sabores inesquecíveis que fazem o nosso cardápio ser
+                o preferido dos turistas e locais.
+              </p>
+              <a
+                href="#"
+                class="text-boteco-primary font-bold hover:text-boteco-accent-primary transition-colors"
+                >Leia Mais →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="blog-card bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200"
+          >
+            <div
+              class="w-full h-48 bg-boteco-accent-primary flex items-center justify-center"
+            >
+              <i class="fas fa-music text-6xl text-boteco-dark"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">
+                Agenda Cultural: O Melhor do Samba e Choro
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Confira nossa programação musical da semana e venha curtir o
+                melhor do som ambiente do Nordeste.
+              </p>
+              <a
+                href="#"
+                class="text-boteco-primary font-bold hover:text-boteco-accent-primary transition-colors"
+                >Leia Mais →</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="blog-card bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200"
+          >
+            <div
+              class="w-full h-48 bg-boteco-accent-primary flex items-center justify-center"
+            >
+              <i class="fas fa-cocktail text-6xl text-boteco-dark"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">
+                Drinks Refrescantes para o Verão Alagoano
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Nossa seleção especial de coquetéis com e sem álcool para
+                acompanhar o calor da orla.
+              </p>
+              <a
+                href="#"
+                class="text-boteco-primary font-bold hover:text-boteco-accent-primary transition-colors"
+                >Leia Mais →</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedbacks Section -->
+    <section
+      id="feedbacks"
+      class="py-24 bg-boteco-primary text-boteco-light scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-6xl text-center font-bold mb-16 text-boteco-light uppercase tracking-wider"
+        >
+          O que dizem de nós
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="feedback-card bg-boteco-light text-boteco-dark p-6 rounded-lg shadow-2xl relative"
+          >
+            <i
+              class="fas fa-quote-left text-3xl text-boteco-accent-primary mb-4 block"
+            ></i>
+            <p class="italic mb-4 text-gray-700 font-sans">
+              "O ambiente é incrível, a comida é sensacional e a música ao vivo
+              te transporta! Parada obrigatória em Maceió."
+            </p>
+            <div class="font-bold text-lg border-t pt-2 mt-4 text-boteco-dark">
+              Maria F.
+            </div>
+            <span class="text-sm text-boteco-primary"
+              >Turista de São Paulo</span
+            >
+          </div>
+
+          <div
+            class="feedback-card bg-boteco-light text-boteco-dark p-6 rounded-lg shadow-2xl relative"
+          >
+            <i
+              class="fas fa-quote-left text-3xl text-boteco-accent-primary mb-4 block"
+            ></i>
+            <p class="italic mb-4 text-gray-700 font-sans">
+              "O bolinho de carne de sol é o melhor que já comi. O atendimento
+              sempre muito atencioso e o chopp no ponto certo!"
+            </p>
+            <div class="font-bold text-lg border-t pt-2 mt-4 text-boteco-dark">
+              João P.
+            </div>
+            <span class="text-sm text-boteco-primary">Cliente Local</span>
+          </div>
+
+          <div
+            class="feedback-card bg-boteco-light text-boteco-dark p-6 rounded-lg shadow-2xl relative"
+          >
+            <i
+              class="fas fa-quote-left text-3xl text-boteco-accent-primary mb-4 block"
+            ></i>
+            <p class="italic mb-4 text-gray-700 font-sans">
+              "Um verdadeiro lugar de gente feliz. Os valores de AMOR e
+              humanização são visíveis em cada detalhe do serviço."
+            </p>
+            <div class="font-bold text-lg border-t pt-2 mt-4 text-boteco-dark">
+              Carla V.
+            </div>
+            <span class="text-sm text-boteco-primary"
+              >Influencer Gastronômica</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section
+      id="localizacao"
+      class="py-24 bg-boteco-light text-boteco-dark scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-6xl text-center font-bold mb-16 text-boteco-dark uppercase tracking-wider"
+        >
+          Onde Nos Encontrar
+        </h2>
+
+        <div class="card-hover bg-white rounded-lg shadow-2xl overflow-hidden">
+          <div class="aspect-w-16 aspect-h-9 w-full h-96">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.323257057796!2d-35.75111282676858!3d-9.567377800701028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7014873aa020cbf%3A0x7fc7ff4b817d153e!2sR.%20Lu%C3%ADs%20Bina%20Xavier%2C%2088b%20-%20Tabuleiro%20do%20Martins%2C%20Macei%C3%B3%20-%20AL%2C%2057081-690!5e0!3m2!1spt-BR!2sbr!4v1761254084932!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-3xl font-bold mb-2">
+              Boteco Tudo Aqui Perto de Casa
+            </h3>
+            <p class="text-lg text-gray-600">
+              Rua Luiz Bina Xavier, 88b - Dubeaux Leão, Maceió - AL, CEP:
+              57081-690
+            </p>
+            <p
+              class="mt-4 flex items-center text-xl font-bold text-boteco-accent-primary"
+            >
+              <i class="fas fa-star mr-2"></i> 4.5
+              <span class="text-sm font-normal text-gray-500 ml-2"
+                >(? avaliações)</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="fale-conosco"
+      class="py-24 bg-boteco-dark bg-map-grid bg-repeat text-boteco-light scroll-mt-20"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2
+          class="text-6xl font-bold mb-4 text-boteco-light uppercase tracking-wider"
+        >
+          QUER FALAR COMIGO?
+        </h2>
+        <p class="text-lg mb-12 text-gray-400">
+          É só mandar uma mensagem no campo abaixo. Se quiser se identificar,
+          não esqueça de deixar seu nome e contato.
+        </p>
+
+        <form action="#" method="POST" class="w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu Nome *"
+                required
+                class="form-input w-full p-4 border border-boteco-accent-primary/50 rounded-lg bg-boteco-dark text-boteco-light focus:ring-boteco-accent-primary focus:border-boteco-accent-primary"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Seu Email ou Telefone *"
+                required
+                class="form-input w-full p-4 border border-boteco-accent-primary/50 rounded-lg bg-boteco-dark text-boteco-light focus:ring-boteco-accent-primary focus:border-boteco-accent-primary"
+              />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="6"
+              placeholder="Envie dúvidas, sugestões, reclamações ou só envie um oi mesmo *"
+              required
+              class="form-input w-full p-4 border border-boteco-accent-primary/50 rounded-lg bg-boteco-dark text-boteco-light focus:ring-boteco-accent-primary focus:border-boteco-accent-primary"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-primary w-full md:w-auto px-12 py-4 text-boteco-dark text-xl font-bold uppercase rounded-lg shadow-2xl"
+          >
+            ENVIAR MENSAGEM
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer
+      class="bg-boteco-dark py-12 border-t border-boteco-accent-primary/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="flex justify-center space-x-6 mb-6">
+          <a
+            href="#"
+            class="text-boteco-light hover:text-boteco-accent-primary transition-colors text-3xl"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="#"
+            class="text-boteco-light hover:text-boteco-accent-primary transition-colors text-3xl"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://wa.me/5582999999999"
+            target="_blank"
+            class="text-boteco-light hover:text-boteco-accent-primary transition-colors text-3xl"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+        <p class="text-sm text-gray-400 font-sans">
+          © 2025 Boteco Tudo Aqui Perto de Casa. Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
